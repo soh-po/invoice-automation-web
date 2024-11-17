@@ -58,7 +58,6 @@ cover/
 # Django stuff:
 *.log
 *.pyc
-__pycache__/
 db-volumes/
 .env
 local_settings.py
