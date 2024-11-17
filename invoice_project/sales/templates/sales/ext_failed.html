@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}ファイルエラー{% endblock title %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">ファイルが違います</h1>
+        <p style="font-size: 20px;">エクセルファイル(.xlsx)ではありません。<br>ファイルを確認し、再度アップロードしてください。</p>
+        <p style="font-size: 20px;"><a href="{% url 'upload_sales_data' %}" class="btn btn-primary">戻る</a></p>
+        <p style="font-size: 15px;">実行日時: {{ now_datetime }}</p>
+    </div>
+{% endblock content %}

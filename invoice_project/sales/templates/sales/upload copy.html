@@ -1,0 +1,53 @@
+{% extends "base.html" %}]
+{% load static %}
+
+{% block title %}ファイル送信フォーム{% endblock title %}
+
+{% block content %}
+        <div class="container mt-5">
+            <h1>ファイル送信フォーム</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_sales_data" class="form-label">売上データのファイルをアップロード</label>
+                    <input type="file" name="sales_data" class="form-control" id="id_sales_data" multiple required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_invoice_template">請求書テンプレートファイルをアップロード</label>
+                    <input type="file" name="invoice_template" class="form-control" id="id_invoice_template" required>
+                </div>
+                    <!-- <div class="mb-3 form-check"> -->
+                    <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+                <button type="submit" class="btn btn-primary">アップロード&作成</button>
+            </form>
+        </div>
+
+
+        {% comment %} <h1 class="mb-4">ファイル送信フォーム</h1>
+        <div class="form-group">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>
+                    <label for="id_sales_data">売上データのファイルをアップロード</label>
+                    <input type="file" multiple name="sales_data" class="form-control" required id="id_sales_data">
+                </p>
+                <p>
+                    <label for="id_invoice_template">請求書テンプレートファイルをアップロード</label>
+                    <input type="file" name="invoice_template" class="form-control" required id="id_invoice_template">
+                </p>
+                <p>
+                    <label>請求書作成日時を指定</label><br>
+                    <input type="date" name="create_date" id="dateInput" required >
+                </p>
+                <br>
+                <button type="submit" class="btn btn-primary">アップロード&作成</button>
+            </form>
+        </div> {% endcomment %}
+        <div class="datetime">
+            <p id="datetime">現在日時：</p>
+        </div>
+    </div>
+    <script src="{% static 'js/utils.js' %}"></script>
+{% endblock content %}

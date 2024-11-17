@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}請求書のダウンロード{% endblock title %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">請求書が作成されました</h2>
+        <p style="font-size: 20px;"><a href="{{ invoice_url }}" class="btn btn-primary">請求書をダウンロード</a></p><br>
+        <p style="font-size: 13px; margin: 0;">実行時間: {{ processing_time }}秒</p>
+        <p style="font-size: 13px;">実行日時: {{ now_datetime }}</p>
+    </div>
+{% endblock content %}

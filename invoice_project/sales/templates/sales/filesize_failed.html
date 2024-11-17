@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}ファイルサイズエラー{% endblock title %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">ファイルサイズエラー</h1>
+        <p style="font-size: 20px;">ファイルサイズが大きすぎます。<br>お手数ですが10MB以下にして再度アップロードしてください。<br></p>
+        <p style="font-size: 20px;"><a href="{% url 'upload_sales_data' %}" class="btn btn-primary">戻る</a></p>
+        <p style="font-size: 15px;">実行日時: {{ now_datetime }}</p>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}]
+{% load static %}
+
+{% block title %}請求書作成{% endblock title %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">請求書作成</h1>
+        <div class="form-group">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>
+                    <label for="id_sales_data">売上データのファイルをアップロード</label>
+                    <input type="file" multiple name="sales_data" class="form-control" required id="id_sales_data">
+                </p>
+                <p>
+                    <label for="id_invoice_template">請求書テンプレートファイルをアップロード</label>
+                    <input type="file" name="invoice_template" class="form-control" required id="id_invoice_template">
+                </p>
+                <p>
+                    <label>請求書作成日時を指定</label><br>
+                    <input type="date" name="create_date" id="dateInput" required >
+                </p>
+                <br>
+                <button type="submit" class="btn btn-primary">アップロード&amp;作成</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+
+
